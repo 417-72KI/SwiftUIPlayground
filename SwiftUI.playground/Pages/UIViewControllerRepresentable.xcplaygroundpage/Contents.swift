@@ -23,16 +23,31 @@ struct SampleView: UIViewControllerRepresentable {
 extension SampleView {
     class Coordinator: NSObject {
         override init() {
-            print(#function)
             super.init()
+            print(self, #function)
         }
         deinit {
-            print(Self.self, #function)
+            print(self, #function)
         }
     }
 }
 
 class SampleUIViewController: UIViewController {
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        print(self, #function)
+    }
+
+    init() {
+        super.init(nibName: nil, bundle: nil)
+        print(self, #function)
+    }
+
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        print(self, #function)
+    }
+
     override func loadView() {
         print(#function)
         super.loadView()
@@ -84,16 +99,25 @@ class SampleUIViewController: UIViewController {
     }
 
     deinit {
-        print(Self.self, #function)
+        print(self, #function)
     }
 }
 
-let view = SampleView()
+do {
+    let view = SampleView()
 
-PlaygroundPage.current.setLiveView(view)
-print()
-PlaygroundPage.current.liveView = nil
-print()
-PlaygroundPage.current.setLiveView(view)
-print()
-PlaygroundPage.current.liveView = nil
+    PlaygroundPage.current.setLiveView(view)
+    print()
+    PlaygroundPage.current.liveView = nil
+}
+
+//print()
+//sleep(1)
+//
+//do {
+//    let view = SampleView()
+//
+//    PlaygroundPage.current.setLiveView(view)
+//    print()
+//    PlaygroundPage.current.liveView = nil
+//}
