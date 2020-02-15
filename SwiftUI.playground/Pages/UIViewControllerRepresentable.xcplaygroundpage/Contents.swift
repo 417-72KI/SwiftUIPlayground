@@ -49,7 +49,7 @@ class SampleUIViewController: UIViewController {
     }
 
     override func loadView() {
-        print(#function)
+        print(self, #function)
         super.loadView()
 
         let label = UILabel()
@@ -64,37 +64,37 @@ class SampleUIViewController: UIViewController {
     }
 
     override func viewDidLoad() {
-        print(#function)
+        print(self, #function)
         super.viewDidLoad()
     }
 
     override func viewWillAppear(_ animated: Bool) {
-        print(#function)
+        print(self, #function)
         super.viewWillAppear(animated)
     }
 
     override func viewWillLayoutSubviews() {
-        print(#function)
+        print(self, #function)
         super.viewWillLayoutSubviews()
     }
 
     override func viewDidLayoutSubviews() {
-        print(#function)
+        print(self, #function)
         super.viewDidLayoutSubviews()
     }
 
     override func viewDidAppear(_ animated: Bool) {
-        print(#function)
+        print(self, #function)
         super.viewDidAppear(animated)
     }
 
     override func viewWillDisappear(_ animated: Bool) {
-        print(#function)
+        print(self, #function)
         super.viewWillDisappear(animated)
     }
 
     override func viewDidDisappear(_ animated: Bool) {
-        print(#function)
+        print(self, #function)
         super.viewDidDisappear(animated)
     }
 
