@@ -105,7 +105,7 @@ class SampleUIViewController: UIViewController {
 
 do {
     let view = SampleView()
-
+    print()
     PlaygroundPage.current.setLiveView(view)
     print()
     PlaygroundPage.current.liveView = nil
