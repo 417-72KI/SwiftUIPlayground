@@ -108,16 +108,12 @@ do {
     print()
     PlaygroundPage.current.setLiveView(view)
     print()
-    PlaygroundPage.current.liveView = nil
 }
 
-//print()
-//sleep(1)
-//
-//do {
-//    let view = SampleView()
-//
-//    PlaygroundPage.current.setLiveView(view)
-//    print()
-//    PlaygroundPage.current.liveView = nil
-//}
+let semaphore = DispatchSemaphore(value: 0)
+DispatchQueue.global().async {
+    sleep(5)
+    semaphore.signal()
+}
+semaphore.wait()
+PlaygroundPage.current.liveView = nil
